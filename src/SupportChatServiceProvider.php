@@ -78,10 +78,9 @@ class SupportChatServiceProvider extends ServiceProvider
         ], 'support-chat-views');
     }
 
-    protected function publishesMigrations(): void
+    protected function publishesMigrations(array $paths, $groups = null)
     {
-        $this->publishes([
-            __DIR__.'/database/migrations' => database_path('migrations'),
-        ], 'support-chat-migrations');
+        $this->publishes($paths, $groups);
     }
+
 }
